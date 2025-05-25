@@ -1,0 +1,45 @@
+.score-item {
+  display: flex;
+  width: 50%;
+  gap: 70px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  background: linear-gradient(to right, #acbbec, #ffc8ff);
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.date{
+    font-size: 14px;
+    color: #000000;
+    background-color: rgb(51, 123, 255);
+    padding: 5px;
+    border-radius: 10px;
+}
+.score-list
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.score-points
+{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 618px) {
+    .score-item {
+        display: flex;
+        width: 100%;
+        gap: 70px;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+        background: linear-gradient(to right, #acbbec, #ffc8ff);
+        margin: 10px;
+      }
+  
+}

@@ -1,0 +1,80 @@
+.login-background {
+    min-height: 100vh;
+    background: linear-gradient(to right, #cbd5e1, #93c5fd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .login-container {
+    background-color: #f8fafc;
+    border: 2px solid #60a5fa;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-title {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 24px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .checkbox-container label {
+    margin-left: 8px;
+    font-size: 14px;
+    color: #334155;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .loginButton:hover {
+    background-color: #2563eb;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .register-link a {
+    color: #1e40af;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
