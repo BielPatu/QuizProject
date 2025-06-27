@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="profile-page text-center">
+    <div class="user-info">
+      <h2>Informações do Usuário</h2>
+      <ng-container *ngIf="user; else loading">
+        <div 
+        class="rounded-circle bg-primary text-white fw-bold mb-3"
+        style="font-size: 300%;width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+        {{ user.name[0] }}
+        </div>
+
+        <p>Nome - <strong>{{ user.name }}</strong></p>
+        <p>Email - <strong>{{ user.email }}</strong></p>
+        <p>Data de Criação - {{ user.createdAt | date: 'short' }}</p>
+      </ng-container>
+      <ng-template #loading>
+        <p>Carregando...</p>
+      </ng-template>
+      <app-user-history></app-user-history>
+        </div>
+  </div>
+  

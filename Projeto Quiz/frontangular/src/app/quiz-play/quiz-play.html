@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+
+<div class="quiz-container text-center" *ngIf="quiz">
+    <div class="quiz-inner mx-auto">
+      <h1 class="quiz-title-play">{{ quiz.title }}</h1>
+  
+      <form (ngSubmit)="handleSubmit()">
+        <div class="question-block mt-4" *ngIf="currentQuestion" @fadeSlide>
+          <h3>{{ currentQuestionIndex + 1 }}. {{ currentQuestion.text }}</h3>
+  
+          <div class="row g-3 mt-3 justify-content-center">
+            <div
+              class="col-md-5"
+              *ngFor="let option of currentQuestion.options"
+            >
+              <label
+                class="option-card w-100 d-block p-3 rounded shadow-sm"
+                [class.selected]="answers[currentQuestion.id] === option.id"
+              >
+                <input
+                  type="radio"
+                  class="d-none"
+                  [name]="'question-' + currentQuestion.id"
+                  [value]="option.id"
+                  [checked]="answers[currentQuestion.id] === option.id"
+                  (change)="handleRadioChange(currentQuestion.id, option.id)"
+                />
+                {{ option.text }}
+              </label>
+            </div>
+          </div>
+        </div>
+  
+        <div class="navigation-buttons mt-4 d-flex justify-content-center gap-3">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="previousQuestion()"
+            [disabled]="isFirstQuestion()"
+          >
+            Anterior
+          </button>
+  
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="nextQuestion()"
+            *ngIf="!isLastQuestion()"
+          >
+            Próxima
+          </button>
+  
+          <button
+            *ngIf="score === null && isLastQuestion()"
+            type="submit"
+            class="btn btn-success"
+            >
+            Enviar Respostas
+            </button>
+
+
+          <button
+        *ngIf="score !== null"
+        type="button"
+        class="btn btn-warning"
+        (click)="resetQuiz()"
+      >
+        Tentar Novamente
+      </button>
+
+
+        </div>
+      </form>
+  
+      <div *ngIf="score !== null" class="mt-4 alert alert-info">
+        <h2>
+          Você acertou {{ score }} de {{ quiz.questions.length }} questões.
+        </h2>
+      </div>
+  
+      <button (click)="backToHome()" class="btn btn-outline-dark mt-3">
+        Voltar
+      </button>
+    </div>
+  </div>
+  

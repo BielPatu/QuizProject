@@ -1,0 +1,17 @@
+<div class="login-background">
+  <div class="login-container">
+    <h1 class="login-title">Login</h1>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" [(ngModel)]="email" />
+
+    <label for="password">Senha</label>
+    <input id="password" type="password" [(ngModel)]="password" />
+
+    
+
+    <button class="loginButton" (click)="loginValidation()">Entrar</button>
+
+    <p class="mt-2">Não tem conta? <a routerLink="/register">Crie agora</a></p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-4 py-2 d-flex justify-content-between align-items-center">
+    <div class="navbar-brand d-flex align-items-center">
+      <strong class="fs-4">Quiz Insano</strong>
+      <a class ="thingy" routerLink="/homepage"><span class="ms-2 text-muted">Inicio</span></a>
+      <a class ="thingy" routerLink="/maker"><span class="ms-2 text-muted">Criar Quizzes</span></a>
+    </div>
+  
+    <div class="d-flex align-items-center gap-3">
+      <div class="user-avatar bg-primary text-white rounded-circle d-flex justify-content-center align-items-center">
+        {{ userName[0] }}
+      </div>
+  
+      <a class="clickable-name"routerLink="/profile"><span class="fw-semibold">{{ userName }}</span></a>
+  
+      <button class="btn btn-outline-danger btn-sm" (click)="logout()">
+        Sair
+      </button>
+    </div>
+  </nav>
+  

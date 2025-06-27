@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="quiz-maker-container">
+    <h2 class="quiz-title">Criar Novo Quiz</h2>
+  
+    <input
+      class="quiz-input"
+      type="text"
+      placeholder="Título do quiz"
+      [(ngModel)]="title"
+    />
+  
+    <textarea
+      class="quiz-textarea"
+      placeholder="Descrição do quiz"
+      [(ngModel)]="description"
+    ></textarea>
+  
+    <div *ngFor="let question of questions; let qIndex = index" class="question-card">
+      <div class="question-header">
+        <h4>Pergunta #{{ qIndex + 1 }}</h4>
+        <button class="remove-button" (click)="removeQuestion(qIndex)">✖</button>
+      </div>
+  
+      <input
+        class="quiz-input question-input"
+        type="text"
+        placeholder="Texto da pergunta"
+        [(ngModel)]="question.text"
+        (ngModelChange)="updateQuestionText(qIndex, $event)"
+      />
+  
+      <div *ngFor="let option of question.options; let oIndex = index" class="option-line">
+        <input
+          type="radio"
+          [name]="'correctOption-' + qIndex"
+          [checked]="option.isCorrect"
+          (change)="setCorrectOption(qIndex, oIndex)"
+        />
+        <input
+          class="quiz-input option-input"
+          type="text"
+          placeholder="Opção #{{ oIndex + 1 }}"
+          [(ngModel)]="option.text"
+          (ngModelChange)="updateOptionText(qIndex, oIndex, $event)"
+        />
+        <button class="remove-button" (click)="removeOption(qIndex, oIndex)">✖</button>
+      </div>
+  
+      <button class="btn secondary" type="button" (click)="addOption(qIndex)">
+        Adicionar Opção
+      </button>
+    </div>
+  
+    <button class="btn primary" type="button" (click)="addQuestion()">
+      Adicionar Pergunta
+    </button>
+  
+    <button class="btn success" type="button" (click)="handleSubmit()">
+      Criar Quiz
+    </button>
+  </div>
+  

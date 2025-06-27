@@ -1,0 +1,36 @@
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+.navbar
+{
+    margin-bottom: 5%;
+}
+
+
+  .btn-link {
+    text-decoration: none !important;  
+    color: inherit !important;          
+    box-shadow: none !important;        
+  }
+  
+  .btn-link:focus, .btn-link:hover {
+    text-decoration: none !important;  
+    outline: none !important;           
+    box-shadow: none !important;
+  }
+
+  .cliclable-name {
+   transition: scale 0.2s ease-in-out;
+  }
+
+  .cliclable-name:hover {
+    scale: 1.05;
+    cursor: pointer;
+  }
+  .thingy  { 
+    margin-left: 10%;
+    margin-right: 5%;
+  }

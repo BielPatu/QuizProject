@@ -1,0 +1,21 @@
+<div class="register-background">
+    <div class="register-container">
+      <h1 class="register-title">Registrar</h1>
+  
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="name" />
+  
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" />
+  
+      <label>Senha</label>
+      <input type="password" [(ngModel)]="password" />
+  
+      <button class="registerButton" (click)="registerUser()">Registrar</button>
+  
+      <div class="login-link">
+        <p>Já possui conta? <a routerLink="/">Faça login</a></p>
+      </div>
+    </div>
+  </div>
+  
